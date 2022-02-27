@@ -1,0 +1,23 @@
+{
+  "name": "sharestory",
+  "version": "1.0.0",
+  "description": "This is sharestory App where you can post and like posts.\r For running this you have to use clone this repo and install necessary packages using \r : npm install\r and after that you can run this by using: npm start",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start && cd.. && cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mekrishnaa/ShareStory.git"
+  },
+  "author": "Krishna Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mekrishnaa/ShareStory/issues"
+  },
+  "homepage": "https://github.com/mekrishnaa/ShareStory#readme"
+}

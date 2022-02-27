@@ -16,6 +16,10 @@ app.use(bodyParser.json({limit:"30mb", extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended:true}));
 app.use(cors());    // it enables us to move data from backed end to front end and vise-verse.
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build/'));
+}
+
 app.use('/posts',postRoutes);
 app.use('/user',userRoutes);
 // const CONNECTION_URL = 'mongodb+srv://<db_name>:<db_password>@cluster0.hhow7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
