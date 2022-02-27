@@ -19,7 +19,6 @@ dispatch({type:'LOGOUT'});      // it will dispatch the Logout method.
 history.push('/');              // Now we will be on our home page.
 setUser(null);                  // setting current user to null since user logged Out.
 };
-console.log(user); 
 
 useEffect(()=>{
     const token = user?.token;  // extracting the token from the user.
