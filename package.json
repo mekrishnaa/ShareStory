@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "This is sharestory App where you can post and like posts.\r For running this you have to use clone this repo and install necessary packages using \r : npm install\r and after that you can run this by using: npm start",
   "main": "index.js",
+  "engines": {
+    "node": "16.13.x",
+    "npm": "8.3.x"
+  },
   "scripts": {
     "start": "cd server && npm start && cd.. && cd client && npm start",
     "build": "cd client && npm run build",
