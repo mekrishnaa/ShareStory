@@ -6,7 +6,6 @@ import postMessage from '../models/postMessage.js';
 export const getPosts = async(req,res,next)=>{
    try {
        const postMessages = await postMessage.find();   // getting all the postMessages from database
-       //console.log(postMessages);
        res.status(200).json(postMessages);
    } catch (error) {
        res.status(404).json({message:error.message});
@@ -17,7 +16,6 @@ export const getPosts = async(req,res,next)=>{
 // method for create a post 
 export const createPost = async(req,res,next)=>{
     const post = req.body;
-    //console.log(post);
     const newPost = new postMessage({...post,creator:req.userId,createdAt:new Date().toISOString()});
    try {
     
@@ -43,7 +41,6 @@ export const deletePost = async(req,res)=>{
     const{id} = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that Id ');
     await postMessage.findByIdAndRemove(id);
-    console.log('post deleted');
     res.json({message:'Post Deleted Successfully'});
 
 };
